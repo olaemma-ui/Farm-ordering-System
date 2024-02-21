@@ -3,6 +3,8 @@
     require_once  './utils/session.php';
     require_once  './utils/validation.php';
     // include './includes/header.php';
+    include './includes/topbar.php';
+    include './constants/session_keys.php';
     
     $sessionManager = new SessionManager();
     $autheService = new AuthenticationService($sessionManager);
@@ -11,8 +13,12 @@
     /// Validates the fields in the login page
     $validationService->validate();
 
+    if ($sessionManager->has(SessionKeys::$USER_ID)) {
+        
+    }
+
     if($validationService->valid) {
-        $autheService->login($validationService->email[0], $validationService->password[0], 'customer');
+        $autheService->login($validationService->email[0], $validationService->password[0]);
     }
 ?>
 

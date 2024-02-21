@@ -41,22 +41,6 @@
             $this->connection->close();
         }
 
-        
-        /**
-         * This method manages the application select query
-         * @param string $query this is the query to be executed
-         */
-        public function select ($query) {
-            $result = $this->connection->query($query);
-            if ($result) {
-                $result = $result->fetch_assoc();
-                // print_r($result);
-                return $result;
-            }
-            die("Error executing query: " . $this->connection->error);
-        }
-
-
     }
 
 

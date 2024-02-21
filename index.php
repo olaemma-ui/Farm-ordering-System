@@ -1,4 +1,7 @@
-
+<?php 
+    include './includes/topbar.php'; 
+    include './includes/header.php';
+?>
 
 
     <!--=============================

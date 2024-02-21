@@ -1,18 +1,15 @@
 <?php 
 
-    include("./utils/database.php");
     // include "./utils/session.php";
     include("./constants/session_keys.php");
+    include("./repository/auth_repository.php");
 
-    class AuthenticationService{
+    class AuthenticationService extends AuthenticationRepository{
         
-        private $database;
-
         private $sessionManager;
 
 
         public function __construct($sessionManager) {
-            $this->database = new Database();
             $this->sessionManager = $sessionManager;
         }
 
@@ -24,24 +21,17 @@
          * This methods accepts the above parameters, to identify the user and the table 
          * we're to query.
          */
-        public function login($email, $password, $table){
+        public function login($email, $password){
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                    
-                // $password = sha1($password);
-                $sql = "SELECT * FROM $table 
-                        WHERE $table.email='$email' 
-                        AND $table.password='$password'";
 
-                $result = $this->database->select($sql);
-                
+                $result = $this->findByEmailAndPassword($email, $password, 'customer');
+
                 if($result){
-                    
                     if (count($result) > 0) {
                         header('location:./index.php');
-                        // $this->sessionManager->set(SessionKeys::$USER_ID, $result['user_id']);
-                        // $this-> sessionManager-> remove(SessionKeys::$ERROR_MESSAGE);
-                        return;
+                        $this-> sessionManager-> set(SessionKeys::$USER_ID, $result['user_id']);
+                        $this-> sessionManager-> remove(SessionKeys::$ERROR_MESSAGE);
                     }
                     return;
                 }
@@ -50,24 +40,32 @@
             
         }
 
+
+        /**
+         * 
+         * @param string firstname
+         * @param string lastname
+         * @param string email
+         * @param string phone
+         * @param string password
+         */
         public function register( $firstname, $lastname, $email, $phone, $password){
             if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                $sql = "SELECT * FROM customer 
-                        WHERE customer.phone='$phone' 
-                        OR customer.email='$email'";
-                $result = $this->database->select($sql);
-                // if ($result->num_rows > 0) {
-                //     $this->sessionManager = new SessionManager();
-                //     if ($result['phome'] == $phone) {
-                //         $this->sessionManager->set(SessionKeys::$ERROR_MESSAGE, 'Account with this mobile number already exist!!!');
-                //     }else{
-                //         $this->sessionManager->set(SessionKeys::$ERROR_MESSAGE, 'Account with this email already exist!!!');
-                //     }
-                //     return false;
-                // }else{
-                //     $hash = sha1($password);
+                
+                $result = $this->findByPhoneOrEmail($email, $phone, 'customer');
 
-                // }
+                if ($result) {
+                    $this->sessionManager = new SessionManager();
+                    if ($result['phone'] == $phone) {
+                        $this->sessionManager->set(SessionKeys::$ERROR_MESSAGE, 'Account with this mobile number already exist!!!');
+                    }else{
+                        $this->sessionManager->set(SessionKeys::$ERROR_MESSAGE, 'Account with this email already exist!!!');
+                    }
+                    return false;
+                }else{
+                    $hash = sha1($password);
+
+                }
 
             }
         }
