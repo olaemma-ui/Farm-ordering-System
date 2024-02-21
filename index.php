@@ -1,7 +1,5 @@
-<?php 
-    include './includes/topbar.php'; 
-    include './includes/header.php';
-?>
+
+<?php include './includes/header.php' ?>
 
 
     <!--=============================
@@ -83,52 +81,52 @@
                 <div class="col-xl-4">
                     <div class="offer_item_single" style="background: url(images/offer_item_img1.jpg);">
                         <span>37% off</span>
-                        <a class="title" href="menu_details.php">Chicken Nuggets</a>
+                        <a class="title" href="menu_details.html">Chicken Nuggets</a>
                         <p>Enim ipsam voluptat in quia voluptas sit aspe rnatur aut odit aut.</p>
                         <ul class="d-flex flex-wrap">
                             <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal"><i
                                         class="fas fa-shopping-basket"></i></a></li>
                             <li><a href="#"><i class="fal fa-heart"></i></a></li>
-                            <li><a href="menu_details.php"><i class="far fa-eye"></i></a></li>
+                            <li><a href="menu_details.html"><i class="far fa-eye"></i></a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-4">
                     <div class="offer_item_single" style="background: url(images/offer_item_img2.jpg);">
                         <span>40% off</span>
-                        <a class="title" href="menu_details.php">Beef Masala</a>
+                        <a class="title" href="menu_details.html">Beef Masala</a>
                         <p>Enim ipsam voluptat in quia voluptas sit aspe rnatur aut odit aut.</p>
                         <ul class="d-flex flex-wrap">
                             <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal"><i
                                         class="fas fa-shopping-basket"></i></a></li>
                             <li><a href="#"><i class="fal fa-heart"></i></a></li>
-                            <li><a href="menu_details.php"><i class="far fa-eye"></i></a></li>
+                            <li><a href="menu_details.html"><i class="far fa-eye"></i></a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-4">
                     <div class="offer_item_single" style="background: url(images/offer_item_img3.jpg);">
                         <span>55% off</span>
-                        <a class="title" href="menu_details.php">Dal Makhani</a>
+                        <a class="title" href="menu_details.html">Dal Makhani</a>
                         <p>Enim ipsam voluptat in quia voluptas sit aspe rnatur aut odit aut.</p>
                         <ul class="d-flex flex-wrap">
                             <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal"><i
                                         class="fas fa-shopping-basket"></i></a></li>
                             <li><a href="#"><i class="fal fa-heart"></i></a></li>
-                            <li><a href="menu_details.php"><i class="far fa-eye"></i></a></li>
+                            <li><a href="menu_details.html"><i class="far fa-eye"></i></a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-4">
                     <div class="offer_item_single" style="background: url(images/offer_item_img2.jpg);">
                         <span>45% off</span>
-                        <a class="title" href="menu_details.php">Beef Masala</a>
+                        <a class="title" href="menu_details.html">Beef Masala</a>
                         <p>Enim ipsam voluptat in quia voluptas sit aspe rnatur aut odit aut.</p>
                         <ul class="d-flex flex-wrap">
                             <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal"><i
                                         class="fas fa-shopping-basket"></i></a></li>
                             <li><a href="#"><i class="fal fa-heart"></i></a></li>
-                            <li><a href="menu_details.php"><i class="far fa-eye"></i></a></li>
+                            <li><a href="menu_details.html"><i class="far fa-eye"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -333,7 +331,7 @@
                         </div>
                         <div class="menu_item_text">
                             <a class="category" href="#">Biryani</a>
-                            <a class="title" href="menu_details.php">Hyderabadi biryani</a>
+                            <a class="title" href="menu_details.html">Hyderabadi biryani</a>
                             <p class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -347,7 +345,7 @@
                                 to cart</a>
                             <ul class="d-flex flex-wrap justify-content-end">
                                 <li><a href="#"><i class="fal fa-heart"></i></a></li>
-                                <li><a href="menu_details.php"><i class="far fa-eye"></i></a></li>
+                                <li><a href="menu_details.html"><i class="far fa-eye"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -359,7 +357,7 @@
                         </div>
                         <div class="menu_item_text">
                             <a class="category" href="#">Chicken</a>
-                            <a class="title" href="menu_details.php">Daria Shevtsova</a>
+                            <a class="title" href="menu_details.html">Daria Shevtsova</a>
                             <p class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -373,7 +371,7 @@
                                 to cart</a>
                             <ul class="d-flex flex-wrap justify-content-end">
                                 <li><a href="#"><i class="fal fa-heart"></i></a></li>
-                                <li><a href="menu_details.php"><i class="far fa-eye"></i></a></li>
+                                <li><a href="menu_details.html"><i class="far fa-eye"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -385,7 +383,7 @@
                         </div>
                         <div class="menu_item_text">
                             <a class="category" href="#">burger</a>
-                            <a class="title" href="menu_details.php">Spicy Burger</a>
+                            <a class="title" href="menu_details.html">Spicy Burger</a>
                             <p class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -399,7 +397,7 @@
                                 to cart</a>
                             <ul class="d-flex flex-wrap justify-content-end">
                                 <li><a href="#"><i class="fal fa-heart"></i></a></li>
-                                <li><a href="menu_details.php"><i class="far fa-eye"></i></a></li>
+                                <li><a href="menu_details.html"><i class="far fa-eye"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -411,7 +409,7 @@
                         </div>
                         <div class="menu_item_text">
                             <a class="category" href="#">dressert</a>
-                            <a class="title" href="menu_details.php">Fried Chicken</a>
+                            <a class="title" href="menu_details.html">Fried Chicken</a>
                             <p class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -425,7 +423,7 @@
                                 to cart</a>
                             <ul class="d-flex flex-wrap justify-content-end">
                                 <li><a href="#"><i class="fal fa-heart"></i></a></li>
-                                <li><a href="menu_details.php"><i class="far fa-eye"></i></a></li>
+                                <li><a href="menu_details.html"><i class="far fa-eye"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -437,7 +435,7 @@
                         </div>
                         <div class="menu_item_text">
                             <a class="category" href="#">kabab</a>
-                            <a class="title" href="menu_details.php">Mozzarella Sticks</a>
+                            <a class="title" href="menu_details.html">Mozzarella Sticks</a>
                             <p class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -451,7 +449,7 @@
                                 to cart</a>
                             <ul class="d-flex flex-wrap justify-content-end">
                                 <li><a href="#"><i class="fal fa-heart"></i></a></li>
-                                <<li><a href="menu_details.php"><i class="far fa-eye"></i></a></li>
+                                <<li><a href="menu_details.html"><i class="far fa-eye"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -463,7 +461,7 @@
                         </div>
                         <div class="menu_item_text">
                             <a class="category" href="#">kacchi</a>
-                            <a class="title" href="menu_details.php">Popcorn Chicken</a>
+                            <a class="title" href="menu_details.html">Popcorn Chicken</a>
                             <p class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -477,7 +475,7 @@
                                 to cart</a>
                             <ul class="d-flex flex-wrap justify-content-end">
                                 <li><a href="#"><i class="fal fa-heart"></i></a></li>
-                                <li><a href="menu_details.php"><i class="far fa-eye"></i></a></li>
+                                <li><a href="menu_details.html"><i class="far fa-eye"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -489,7 +487,7 @@
                         </div>
                         <div class="menu_item_text">
                             <a class="category" href="#">noodles</a>
-                            <a class="title" href="menu_details.php">Chicken Wings</a>
+                            <a class="title" href="menu_details.html">Chicken Wings</a>
                             <p class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -503,7 +501,7 @@
                                 to cart</a>
                             <ul class="d-flex flex-wrap justify-content-end">
                                 <li><a href="#"><i class="fal fa-heart"></i></a></li>
-                                <li><a href="menu_details.php"><i class="far fa-eye"></i></a></li>
+                                <li><a href="menu_details.html"><i class="far fa-eye"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -515,7 +513,7 @@
                         </div>
                         <div class="menu_item_text">
                             <a class="category" href="#">grill</a>
-                            <a class="title" href="menu_details.php">Onion Rings</a>
+                            <a class="title" href="menu_details.html">Onion Rings</a>
                             <p class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -529,7 +527,7 @@
                                 to cart</a>
                             <ul class="d-flex flex-wrap justify-content-end">
                                 <li><a href="#"><i class="fal fa-heart"></i></a></li>
-                                <li><a href="menu_details.php"><i class="far fa-eye"></i></a></li>
+                                <li><a href="menu_details.html"><i class="far fa-eye"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -662,7 +660,7 @@
                             <h5>weekly best seller</h5>
                             <h2>Fried Chicken</h2>
                             <p>Neque porro quisquam est qui dolor ipsum quia dolor sit ametsed.</p>
-                            <a href="menu_details.php">shop now <i class="far fa-long-arrow-right"></i></a>
+                            <a href="menu_details.html">shop now <i class="far fa-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -672,7 +670,7 @@
                             <h5>daily offer</h5>
                             <h2>Hyderabadi Biryani</h2>
                             <p>Neque porro quisquam est qui dolor ipsum quia dolor sit ametsed.</p>
-                            <a href="menu_details.php">shop now <i class="far fa-long-arrow-right"></i></a>
+                            <a href="menu_details.html">shop now <i class="far fa-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -921,12 +919,12 @@
                         </div>
                         <div class="single_blog_text">
                             <a class="category" href="#">food</a>
-                            <a class="title" href="blog_details.php">Operates approximately 400 restaurants</a>
+                            <a class="title" href="blog_details.html">Operates approximately 400 restaurants</a>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam eos, odit beatae
                                 sequi
                                 tenetur quidem.</p>
                             <div class="single_blog_footer">
-                                <a class="read_btn" href="blog_details.php">read more <i
+                                <a class="read_btn" href="blog_details.html">read more <i
                                         class="far fa-long-arrow-right"></i></a>
                                 <span><i class="far fa-comments"></i> 120</span>
                             </div>
@@ -949,12 +947,12 @@
                         </div>
                         <div class="single_blog_text">
                             <a class="category" href="#">restaurent</a>
-                            <a class="title" href="blog_details.php">Introducing Our New Summer Menu!</a>
+                            <a class="title" href="blog_details.html">Introducing Our New Summer Menu!</a>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam eos, odit beatae
                                 sequi
                                 tenetur quidem.</p>
                             <div class="single_blog_footer">
-                                <a class="read_btn" href="blog_details.php">read more <i
+                                <a class="read_btn" href="blog_details.html">read more <i
                                         class="far fa-long-arrow-right"></i></a>
                                 <span><i class="far fa-comments"></i> 120</span>
                             </div>
@@ -977,12 +975,12 @@
                         </div>
                         <div class="single_blog_text">
                             <a class="category" href="#">resort</a>
-                            <a class="title" href="blog_details.php">Summer Water Rosé + Bubbly Rosé is Here!</a>
+                            <a class="title" href="blog_details.html">Summer Water Rosé + Bubbly Rosé is Here!</a>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam eos, odit beatae
                                 sequi
                                 tenetur quidem.</p>
                             <div class="single_blog_footer">
-                                <a class="read_btn" href="blog_details.php">read more <i
+                                <a class="read_btn" href="blog_details.html">read more <i
                                         class="far fa-long-arrow-right"></i></a>
                                 <span><i class="far fa-comments"></i> 120</span>
                             </div>
@@ -1005,12 +1003,12 @@
                         </div>
                         <div class="single_blog_text">
                             <a class="category" href="#">party</a>
-                            <a class="title" href="blog_details.php">Tender fried baby squid with a salt, pepper</a>
+                            <a class="title" href="blog_details.html">Tender fried baby squid with a salt, pepper</a>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam eos, odit beatae
                                 sequi
                                 tenetur quidem.</p>
                             <div class="single_blog_footer">
-                                <a class="read_btn" href="blog_details.php">read more <i
+                                <a class="read_btn" href="blog_details.html">read more <i
                                         class="far fa-long-arrow-right"></i></a>
                                 <span><i class="far fa-comments"></i> 120</span>
                             </div>
@@ -1024,4 +1022,119 @@
         BLOG END
     ==============================-->
 
-    <?php include 'includes/footer.php' ?>
+
+    <!--=============================
+        FOOTER START
+    ==============================-->
+    <footer style="background: url(images/footer_bg.jpg);">
+        <div class="footer_overlay pt_100 xs_pt_70 pb_100 xs_pb_20">
+            <div class="container wow fadeInUp" data-wow-duration="1s">
+                <div class="row justify-content-between">
+                    <div class="col-xxl-4 col-lg-4 col-sm-9 col-md-7">
+                        <div class="footer_content">
+                            <a class="footer_logo" href="index.html">
+                                <img src="images/footer_logo.png" alt="RegFood" class="img-fluid w-100">
+                            </a>
+                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta facere delectus qui
+                                placeat inventore consectetur repellendus optio debitis.</span>
+                            <ul class="social_link d-flex flex-wrap">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-lg-2 col-sm-5 col-md-5">
+                        <div class="footer_content">
+                            <h3>Short Link</h3>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Our Service</a></li>
+                                <li><a href="#">gallery</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-lg-2 col-sm-6 col-md-5 order-md-4">
+                        <div class="footer_content">
+                            <h3>Help Link</h3>
+                            <ul>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Refund Policy</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-lg-4 col-sm-9 col-md-7 order-lg-4">
+                        <div class="footer_content">
+                            <h3>contact us</h3>
+                            <p class="info"><i class="fas fa-phone-alt"></i> +44 (0) 20 9994 7740</p>
+                            <p class="info"><i class="fas fa-envelope"></i> themefaxbd@gmail.com</p>
+                            <p class="info"><i class="far fa-map-marker-alt"></i> Blackwell Street,Dry Creek,Alaska</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom d-flex flex-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="footer_bottom_text">
+                            <p>Copyright ©<b> RegFood</b> 2023. All Rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--=============================
+        FOOTER END
+    ==============================-->
+
+
+    <!--=============================
+        SCROLL BUTTON START
+    ==============================-->
+    <div class="scroll_btn"><i class="fas fa-hand-pointer"></i></div>
+    <!--=============================
+        SCROLL BUTTON END 
+    ==============================-->
+
+
+    <!--jquery library js-->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!--bootstrap js-->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!--font-awesome js-->
+    <script src="js/Font-Awesome.js"></script>
+    <!-- slick slider -->
+    <script src="js/slick.min.js"></script>
+    <!-- isotop js -->
+    <script src="js/isotope.pkgd.min.js"></script>
+    <!-- counter up js -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.countup.min.js"></script>
+    <!-- nice select js -->
+    <script src="js/jquery.nice-select.min.js"></script>
+    <!-- venobox js -->
+    <script src="js/venobox.min.js"></script>
+    <!-- sticky sidebar js -->
+    <script src="js/sticky_sidebar.js"></script>
+    <!-- wow js -->
+    <script src="js/wow.min.js"></script>
+    <!-- ex zoom js -->
+    <script src="js/jquery.exzoom.js"></script>
+
+    <!--main/custom js-->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

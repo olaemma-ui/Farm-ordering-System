@@ -4,7 +4,7 @@
     abstract class AuthenticationRepository{
 
         
-        private $database = new Database();
+        private $database;
 
          /**
          * This method manages the application select query
@@ -14,6 +14,8 @@
          * 
          */
         public function findByEmailAndPassword ($email, $password, $table) {
+            $this->database = new Database();
+            
             $query = "SELECT * FROM $table 
             WHERE $table.email='$email' 
             AND $table.password='$password'";
@@ -32,11 +34,10 @@
          * @param string phone
          * @param string table
          */
-        public function findByPhoneOrEmail( $email, $phone, $table) {  
-            
-            $query = "SELECT * FROM $table 
-            WHERE $table.phone='$phone' 
-            OR $table.email='$email'";
+        public function findByPhoneOrEmail( $email, $table) {  
+            $this->database = new Database();
+
+            $query = "SELECT * FROM $table WHERE $table.email='$email'";
             
             $result = $this->database-> connection->query($query);
 

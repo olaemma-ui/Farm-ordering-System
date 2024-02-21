@@ -56,7 +56,7 @@
     ==============================-->
     <nav class="navbar navbar-expand-lg main_menu">
         <div class="container">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="index.html">
                 <img src="images/logo.png" alt="RegFood" class="img-fluid">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -67,49 +67,49 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav m-auto">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php">Home</a>
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="about.php">about</a>
+                        <a class="nav-link active" href="about.html">about</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="menu.php">menu</a>
+                        <a class="nav-link" href="menu.html">menu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="chefs.php">chefs</a>
+                        <a class="nav-link" href="chefs.html">chefs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">pages <i class="far fa-angle-down"></i></a>
                         <ul class="droap_menu">
-                            <li><a href="menu_details.php">menu details</a></li>
-                            <li><a href="blog_details.php">blog details</a></li>
-                            <li><a href="cart_view.php">cart view</a></li>
-                            <li><a href="check_out.php">checkout</a></li>
-                            <li><a href="payment.php">payment</a></li>
-                            <li><a href="testimonial.php">testimonial</a></li>
-                            <li><a href="404.php">404/Error</a></li>
-                            <li><a href="faq.php">FAQs</a></li>
-                            <li><a href="sign_in.php">sign in</a></li>
-                            <li><a href="sign_up.php">sign up</a></li>
-                            <li><a href="forgot_password.php">forgot password</a></li>
-                            <li><a href="privacy_policy.php">privacy policy</a></li>
-                            <li><a href="terms_condition.php">terms and condition</a></li>
+                            <li><a href="menu_details.html">menu details</a></li>
+                            <li><a href="blog_details.html">blog details</a></li>
+                            <li><a href="cart_view.html">cart view</a></li>
+                            <li><a href="check_out.html">checkout</a></li>
+                            <li><a href="payment.html">payment</a></li>
+                            <li><a href="testimonial.html">testimonial</a></li>
+                            <li><a href="404.html">404/Error</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="sign_in.html">sign in</a></li>
+                            <li><a href="sign_up.html">sign up</a></li>
+                            <li><a href="forgot_password.html">forgot password</a></li>
+                            <li><a href="privacy_policy.html">privacy policy</a></li>
+                            <li><a href="terms_condition.html">terms and condition</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="blogs.php">blog</a>
+                        <a class="nav-link" href="blogs.html">blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.php">contact</a>
+                        <a class="nav-link" href="contact.html">contact</a>
                     </li>
                 </ul>
                 <ul class="menu_icon d-flex flex-wrap">
                     <li>
-                        <a class="cart_icon" href="cart_view.php"><i class="fas fa-shopping-basket"></i>
+                        <a class="cart_icon" href="cart_view.html"><i class="fas fa-shopping-basket"></i>
                             <span>05</span></a>
                     </li>
                     <li>
-                        <a href="dashboard.php"><i class="fas fa-user"></i></a>
+                        <a href="dashboard.html"><i class="fas fa-user"></i></a>
                     </li>
                 </ul>
             </div>
@@ -129,7 +129,7 @@
                 <div class="breadcrumb_text">
                     <h1>about us</h1>
                     <ul>
-                        <li><a href="index.php">home</a></li>
+                        <li><a href="index.html">home</a></li>
                         <li><a>about us</a></li>
                     </ul>
                 </div>
@@ -422,7 +422,7 @@
                 <div class="row justify-content-between">
                     <div class="col-xxl-4 col-lg-4 col-sm-9 col-md-7">
                         <div class="footer_content">
-                            <a class="footer_logo" href="index.php">
+                            <a class="footer_logo" href="index.html">
                                 <img src="images/footer_logo.png" alt="RegFood" class="img-fluid w-100">
                             </a>
                             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta facere delectus qui

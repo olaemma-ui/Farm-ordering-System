@@ -14,24 +14,27 @@
         }
 
         /**
-         * @param string email
-         * @param string password
-         * @param string table
-         * 
+         * @param SigninRequest $request
          * This methods accepts the above parameters, to identify the user and the table 
          * we're to query.
+         * 
+         * @param string $tableName
          */
-        public function login($email, $password){
+        public function login($request, $tableName){
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-                $result = $this->findByEmailAndPassword($email, $password, 'customer');
+                $result = $this->findByEmailAndPassword(
+                    $request->getEmail(), 
+                    $request->getPassword(), 
+                    $tableName
+                );
 
                 if($result){
                     if (count($result) > 0) {
-                        header('location:./index.php');
                         $this-> sessionManager-> set(SessionKeys::$USER_ID, $result['user_id']);
                         $this-> sessionManager-> remove(SessionKeys::$ERROR_MESSAGE);
+                        header('location:./index.php');
                     }
                     return;
                 }
@@ -43,27 +46,24 @@
 
         /**
          * 
-         * @param string firstname
-         * @param string lastname
-         * @param string email
-         * @param string phone
-         * @param string password
+         * @param SignupRequest $request
          */
-        public function register( $firstname, $lastname, $email, $phone, $password){
+        public function register( $request){
             if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 
-                $result = $this->findByPhoneOrEmail($email, $phone, 'customer');
+                $result = $this->findByPhoneOrEmail($request->getEmail(), 'customer');
 
                 if ($result) {
-                    $this->sessionManager = new SessionManager();
-                    if ($result['phone'] == $phone) {
-                        $this->sessionManager->set(SessionKeys::$ERROR_MESSAGE, 'Account with this mobile number already exist!!!');
-                    }else{
-                        $this->sessionManager->set(SessionKeys::$ERROR_MESSAGE, 'Account with this email already exist!!!');
+                    if ($result['email'] == $request->getEmail()) {
+                        $this->sessionManager->set(
+                            SessionKeys::$ERROR_MESSAGE, 
+                            'Account with this email already exist!!!'
+                        );
+                        // die('');
                     }
                     return false;
                 }else{
-                    $hash = sha1($password);
+                    $hash = sha1($request->getPassword());
 
                 }
 

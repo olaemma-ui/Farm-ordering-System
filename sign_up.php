@@ -1,123 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
-    <title>RegFood || Restaurant HTML Template</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/custom_spacing.css">
-    <link rel="stylesheet" href="css/venobox.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/jquery.exzoom.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-</head>
+<?php 
+    require_once  './services/auth/authentication_service.php';
+    require_once  './utils/session.php';
+    require_once  './utils/validation.php';
+    require_once './constants/session_keys.php';
+    include './value_object/signin_request.php';
+    include './value_object/signup_request.php';
+    
+    $sessionManager = new SessionManager();
+    $autheService = new AuthenticationService($sessionManager);
+    $validationService = new ValidateFields();
 
-<body>
+    // check if the user is already logged in
+    if ($sessionManager->has(SessionKeys::$USER_ID)) {
+        // header('location:./index.php');
+    }
 
-    <!--=============================
-        TOPBAR START
-    ==============================-->
-    <section class="topbar">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6 col-sm-6 col-md-8">
-                    <ul class="topbar_info d-flex flex-wrap d-none d-sm-flex">
-                        <li><a href="mailto:example@gmail.com"><i class="fas fa-envelope"></i> examplemail@gmail.com</a>
-                        </li>
-                        <li class="d-none d-md-block"><a href="callto:123456789"><i class="fas fa-phone-alt"></i>
-                                +96487452145214</a></li>
-                    </ul>
-                </div>
-                <div class="col-xl-6 col-sm-6 col-md-4">
-                    <ul class="topbar_icon d-flex flex-wrap">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a> </li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a> </li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a> </li>
-                        <li><a href="#"><i class="fab fa-behance"></i></a> </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--=============================
-        TOPBAR END
-    ==============================-->
+    // check if the user is clicked on the signin button
+    if(isset($_POST['signup'])){
 
+        // maps the form to an object
+        $sigUpnRequest  = new SignupRequest(
+            $_POST['name'][0],
+            $_POST['name'][1],
+            $_POST['email'][0],
+            $_POST['password'][0]
+        );
+        
+        // Validates the fields in the login fields
+        $validationService->validate($sigUpnRequest);
 
-    <!--=============================
-        MENU START
-    ==============================-->
-    <nav class="navbar navbar-expand-lg main_menu">
-        <div class="container">
-            <a class="navbar-brand" href="index.php">
-                <img src="images/logo.png" alt="RegFood" class="img-fluid">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="far fa-bars menu_icon_bar"></i>
-                <i class="far fa-times close_icon_close"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav m-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.php">about</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="menu.php">menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="chefs.php">chefs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">pages <i class="far fa-angle-down"></i></a>
-                        <ul class="droap_menu">
-                            <li><a href="menu_details.php">menu details</a></li>
-                            <li><a href="blog_details.php">blog details</a></li>
-                            <li><a href="cart_view.php">cart view</a></li>
-                            <li><a href="check_out.php">checkout</a></li>
-                            <li><a href="payment.php">payment</a></li>
-                            <li><a href="testimonial.php">testimonial</a></li>
-                            <li><a href="404.php">404/Error</a></li>
-                            <li><a href="faq.php">FAQs</a></li>
-                            <li><a href="sign_in.php">sign in</a></li>
-                            <li><a class="active" href="sign_up.php">sign up</a></li>
-                            <li><a href="forgot_password.php">forgot password</a></li>
-                            <li><a href="privacy_policy.php">privacy policy</a></li>
-                            <li><a href="terms_condition.php">terms and condition</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blogs.php">blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.php">contact</a>
-                    </li>
-                </ul>
-                <ul class="menu_icon d-flex flex-wrap">
-                    <li>
-                        <a class="cart_icon" href="cart_view.php"><i class="fas fa-shopping-basket"></i>
-                            <span>05</span></a>
-                    </li>
-                    <li>
-                        <a href="dashboard.php"><i class="fas fa-user"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!--=============================
-        MENU END
-    ==============================-->
+        if($validationService->valid) {
+            $isLoggedIn =  $autheService->register($sigUpnRequest, 'customer');
+        }
+
+    }
+
+    include("./includes/header.php");
+?>
 
 
     <!--=============================
@@ -129,7 +49,7 @@
                 <div class="breadcrumb_text">
                     <h1>sign up</h1>
                     <ul>
-                        <li><a href="index.php">home</a></li>
+                        <li><a href="index.html">home</a></li>
                         <li><a href="#">sign up</a></li>
                     </ul>
                 </div>
@@ -151,31 +71,91 @@
                     <div class="login_area">
                         <h2>Welcome back!</h2>
                         <p>sign up to continue</p>
-                        <form>
+                        <?= 
+                            isset($validationService->errorMessage)
+                            ? ' <div class="alert alert-danger">
+                                    '.$validationService->errorMessage.'
+                                </div>' 
+                            : ''
+                        ?>
+                        <?= 
+                            $sessionManager->has(SessionKeys::$ERROR_MESSAGE)
+                                ? ' <div class="alert alert-danger">
+                                        '.$sessionManager->get(SessionKeys::$ERROR_MESSAGE) .'
+                                    </div>' 
+                                : ''
+                        ?>
+                        <form method="POST" action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>">
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="login_imput">
-                                        <input type="text" placeholder="Name">
+                                        <input 
+                                            value="<?= isset($validationService->name[0]) ? $validationService->name[0] : '' ?>" 
+                                            type="text" 
+                                            name="name[]"
+                                            placeholder="First Name" 
+                                            requireds>
+                                            <span class="text-danger error-text pl-24">
+                                                <?= isset($validationService->name_err[0]) ? $validationService->name_err[0] : '' ?>
+                                            </span>
                                     </div>
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="login_imput">
-                                        <input type="email" placeholder="Email">
+                                        <input 
+                                            value="<?= isset($validationService->name[1]) ? $validationService->name[1] : '' ?>" 
+                                            name="name[]"
+                                            type="text" 
+                                            placeholder="Last Name" 
+                                            requireds>
+                                            <span class="text-danger error-text pl-24">
+                                                <?= isset($validationService->name_err[1]) ? $validationService->name_err[1] : '' ?>
+                                            </span>
                                     </div>
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="login_imput">
-                                        <input type="password" placeholder="Password">
+                                        <input 
+                                            value="<?= isset($validationService->email[0]) ? $validationService->email[0] : '' ?>" 
+                                            name="email[]"
+                                            type="email" 
+                                            placeholder="Email" 
+                                            requireds>
+                                            <span class="text-danger error-text pl-24">
+                                                <?= isset($validationService->email_err[0]) ? $validationService->email_err[0] : '' ?>
+                                            </span>
+                                    </div>
+                                </div>
+                             
+                                <div class="col-xl-12">
+                                    <div class="login_imput">
+                                        <input 
+                                        value="<?= isset($validationService->password[0]) ? $validationService->password[0] : '' ?>" 
+                                        name="password[]"
+                                        type="password" 
+                                        placeholder="Password" 
+                                        requireds>
+                                        <span class="text-danger error-text pl-24">
+                                            <?= isset($validationService->password_err[0]) ? $validationService->password_err[0] : '' ?>
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="login_imput">
-                                        <input type="password" placeholder="Confirm Password">
+                                        <input 
+                                            value="<?= isset($validationService->password[1]) ? $validationService->password[1] : '' ?>" 
+                                            name="password[]"
+                                            type="password" 
+                                            placeholder="Password" 
+                                            requireds>
+                                            <span class="text-danger error-text pl-24">
+                                                <?= isset($validationService->password_err[1]) ? $validationService->password_err[1] : '' ?>
+                                            </span>
                                     </div>
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="login_imput">
-                                        <button type="submit" class="common_btn">login</button>
+                                        <button type="submit" name="signup" class="common_btn">login</button>
                                     </div>
                                 </div>
                             </div>
@@ -187,7 +167,7 @@
                             <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
                         </ul>
-                        <p class="create_account">Dont’t have an aceount ? <a href="sign_in.php">login</a></p>
+                        <p class="create_account">Dont’t have an aceount ? <a href="sign_in.html">login</a></p>
                     </div>
                 </div>
             </div>
@@ -207,7 +187,7 @@
                 <div class="row justify-content-between">
                     <div class="col-xxl-4 col-lg-4 col-sm-9 col-md-7">
                         <div class="footer_content">
-                            <a class="footer_logo" href="index.php">
+                            <a class="footer_logo" href="index.html">
                                 <img src="images/footer_logo.png" alt="RegFood" class="img-fluid w-100">
                             </a>
                             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta facere delectus qui
