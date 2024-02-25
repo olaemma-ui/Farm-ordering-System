@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+    
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/jquery.exzoom.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    
 </head>
 
 <body>
@@ -118,3 +119,4 @@
     <!--=============================
         MENU END
     ==============================-->
+

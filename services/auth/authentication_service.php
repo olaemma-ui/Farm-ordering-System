@@ -1,8 +1,8 @@
 <?php 
 
     // include "./utils/session.php";
-    include("./constants/session_keys.php");
-    include("./repository/auth_repository.php");
+    include("../constants/session_keys.php");
+    include("../repository/auth_repository.php");
 
     class AuthenticationService extends AuthenticationRepository{
         
@@ -19,27 +19,26 @@
          * we're to query.
          * 
          * @param string $tableName
+         * @return bool true if success | fals if not
          */
         public function login($request, $tableName){
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 $result = $this->findByEmailAndPassword(
-                    $request->getEmail(), 
-                    $request->getPassword(), 
-                    $tableName
+                    $request, $tableName
                 );
 
                 if($result){
                     if (count($result) > 0) {
                         $this-> sessionManager-> set(SessionKeys::$USER_ID, $result['user_id']);
-                        $this-> sessionManager-> remove(SessionKeys::$ERROR_MESSAGE);
-                        header('location:./index.php');
+                        return true;
                     }
-                    return;
                 }
-                $this-> sessionManager-> set(SessionKeys::$ERROR_MESSAGE, 'Invalid email or password!!!');
-            }else throw new Exception("Invalid Request Method", 1);
+                return false;
+            }else {
+                throw new Exception("Invalid Request Method", 400);
+            }
             
         }
 
@@ -47,26 +46,18 @@
         /**
          * 
          * @param SignupRequest $request
+         * @param string tableName
          */
-        public function register( $request){
+        public function signup( $request, $tableName){
             if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 
-                $result = $this->findByPhoneOrEmail($request->getEmail(), 'customer');
+                $result = $this->findByEmail($request->getEmail(), $tableName);
 
                 if ($result) {
-                    if ($result['email'] == $request->getEmail()) {
-                        $this->sessionManager->set(
-                            SessionKeys::$ERROR_MESSAGE, 
-                            'Account with this email already exist!!!'
-                        );
-                        // die('');
-                    }
-                    return false;
+                    return 'Account with this email already exist!!!';
                 }else{
-                    $hash = sha1($request->getPassword());
-
+                    return $this->saveCustomer($request);
                 }
-
             }
         }
     }

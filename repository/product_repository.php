@@ -2,7 +2,7 @@
     include("../utils/database.php");
     include("../services/base_service.php");
 
-    abstract class AuthenticationRepository extends BaseService{
+    abstract class ProduRepository extends BaseService{
 
         
         private $database;
@@ -10,21 +10,18 @@
          /**
          * This method manages the application select query
          * @param string $table
-         * @param SigninRequest $request
+         * @param string $id
          */
-        public function findByEmailAndPassword ($request, $table) {
+        public function findById ($id) {
             $this->database = new Database();
             
-            $email = $request->getEmail();
-            $password = sha1($request->getPassword());
-
-            $query = "SELECT * FROM $table 
-            WHERE $table.email='$email' 
-            AND $table.password='$password'";
+            $query = "SELECT * FROM Products
+            WHERE Products.='$id' ";
 
             $result = $this->database-> connection->query($query);
             if ($result) {
                 $result = $result->fetch_assoc();
+                $this->database->closeConnection();
                 return $result;
             }
             die("Error executing query: " . $this->database->connection->error);
@@ -35,16 +32,19 @@
          * @param string email
          * @param string table
          */
-        public function findByEmail($email, $table) {  
+        public function findByName($name) {  
             $this->database = new Database();
 
-            $query = "SELECT * FROM $table WHERE $table.email='$email'";
+            $query = "SELECT * FROM Products WHERE Products. LIKE '%$name%'";
             
             $result = $this->database-> connection->query($query);
 
             if ($result) {
                 $result = $result->fetch_assoc();
                 $this->database->closeConnection();
+                // for ($i=0; $i < ; $i++) { 
+                //     # code...
+                // }
                 return $result;
             }
             die("Error executing query: " . $this->database->connection->error);
