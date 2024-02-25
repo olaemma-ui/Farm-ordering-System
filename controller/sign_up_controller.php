@@ -1,9 +1,9 @@
 
 <?php 
-    include  '../services/auth/authentication_service.php';
-    include  '../utils/session.php';
-    include  '../utils/validation.php';
-    include '../value_object/signup_request.php';
+    include  '../../packages/services/auth/authentication_service.php';
+    include  '../../packages/utils/session.php';
+    include  '../../packages/utils/validation.php';
+    include '../../packages/value_object/signup_request.php';
     
     class SignupController {
 

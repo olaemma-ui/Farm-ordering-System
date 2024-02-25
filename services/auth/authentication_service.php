@@ -1,8 +1,8 @@
 <?php 
 
     // include "./utils/session.php";
-    include("../constants/session_keys.php");
-    include("../repository/auth_repository.php");
+    include("../../packages/constants/session_keys.php");
+    include("../../packages/repository/auth_repository.php");
 
     class AuthenticationService extends AuthenticationRepository{
         
