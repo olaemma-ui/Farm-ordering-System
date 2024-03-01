@@ -8,6 +8,7 @@ class ProductModel {
     private $productPicture;
     private $createdAt;
     private $isAvailable;
+    private $category;
 
     public function __construct(
         $productId,
@@ -16,7 +17,8 @@ class ProductModel {
         $productPrice,
         $productPicture,
         $createdAt,
-        $isAvailable
+        $isAvailable,
+        $category
     ) {
         $this->productId = $productId;
         $this->productName = $productName;
@@ -25,11 +27,16 @@ class ProductModel {
         $this->productPicture = $productPicture;
         $this->createdAt = $createdAt;
         $this->isAvailable = $isAvailable;
+        $this->category=$category;
     }
 
     // Getters and setters
     public function getProductId() {
         return $this->productId;
+    }
+
+    public function getCategory() {
+        return $this->category;
     }
 
     public function getProductName() {
@@ -64,11 +71,26 @@ class ProductModel {
             "productPrice"=> $this->productPrice,
             "productPicture"=> $this->productPicture,
             "createdAt"=> $this->createdAt,
-            "isAvailable"=> $this->isAvailable
+            "isAvailable"=> $this->isAvailable,
+            "category"=> $this->category
         );
     }
 
-
-
+    /**
+     * This method was created to ensure easy serialization
+     * to Json
+     */
+    public function toArray() {
+        return array(
+            "productId" => $this->productId,
+            "productName" => $this->productName,
+            "productDescription" => $this->productDescription,
+            "productPrice" => $this->productPrice,
+            "productPicture" => $this->productPicture,
+            "createdAt" => $this->createdAt,
+            "isAvailable" => $this->isAvailable,
+            "category" => $this->category
+        );
+    }
 }
 ?>

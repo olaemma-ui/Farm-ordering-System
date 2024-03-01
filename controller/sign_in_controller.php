@@ -8,7 +8,7 @@
     class SigninController {
 
         public function init() {
-            
+
             if (isset($_GET['tableName'])) {
                 $sessionManager = new SessionManager();
             $autheService = new AuthenticationService($sessionManager);
@@ -23,6 +23,7 @@
             if ($validationService->valid) {
                 $isLoggedIn = $autheService->login($signinRequest, $_GET['tableName']);
                 if ($isLoggedIn) {
+
                     // Create a response array
                     $response = array(
                         'success' => true,
@@ -30,6 +31,7 @@
                         'statusCode' => '00'
                     );
                 } else {
+
                     // Create an error response for invalid login credentials
                     $response = array(
                         'success' => false,
@@ -38,19 +40,19 @@
                     );
                 }
             } else {
+    
                 // Create an error response for form validation errors
                 $response = array(
                     'success' => false,
                     'message' => 'Form validation Error',
                     'statusCode' => '96'
                 );
-            }
-            }
+            }}
             else{
                 $response = array(
-                    'success' => false,
-                    'message' => 'Table name required params',
-                    'statusCode' => '96'
+                    "success" => false,
+                    "message" => "Table name required params",
+                    "statusCode" => "96"
                 );
             }
         
@@ -58,10 +60,9 @@
             echo json_encode($response);
         }
     }
-    
-    // Create an instance of SigninController and call the init method
-    $controller = new SigninController();
-    $controller->init();
-    
+
+    //initialize the controller class
+    $signInController=new SigninController();
+    $signInController->init();
     
 ?>

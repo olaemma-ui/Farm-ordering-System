@@ -3,23 +3,26 @@
     include("../../packages/services/base_service.php");
 
     abstract class AuthenticationRepository extends BaseService{
-
         
         private $database;
-
-         /**
+        
+         /**    
          * This method manages the application select query
          * @param string $table
          * @param SigninRequest $request
          */
         public function findByEmailAndPassword ($request, $table) {
             $this->database = new Database();
+
+            // echo '{"Hello": "' . $request->toString(). '"}';
             
             $email = $request->getEmail();
-            $password = sha1($request->getPassword());
+            // $password = sha1($request->getPassword());
+            $password = $request->getPassword();
+
 
             $query = "SELECT * FROM $table 
-            WHERE $table.email='$email' 
+            WHERE $table.email='$email'
             AND $table.password='$password'";
 
             $result = $this->database-> connection->query($query);
@@ -45,6 +48,7 @@
             if ($result) {
                 $result = $result->fetch_assoc();
                 $this->database->closeConnection();
+                
                 return $result;
             }
             die("Error executing query: " . $this->database->connection->error);

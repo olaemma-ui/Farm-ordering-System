@@ -6,7 +6,7 @@
      * @property servername this is the server name we're our database is located
      * @property password this is the database password that'll be used for connecting to the server
      * @property connection this defines the database connection to mysql
-     * @property connect() this method is called to connect to the database
+     * @property connect this method is called to connect to the database
      */
     
      class Database {
@@ -28,7 +28,9 @@
 
         // This is method opens/create the database connection for the application
         public function __construct(){
-            $this->connection = new mysqli($this->servername, $this->username, $this->password, $this->database);
+            $this->connection = new mysqli($this->servername, $this->username,
+             $this->password, $this->database);
+
             // Check connectionection
             if ($this->connection->connect_error) {
                 die("Connection failed: " . $this->connection->connect_error);
@@ -40,9 +42,6 @@
         public function closeConnection(){
             $this->connection->close();
         }
-
     }
-
-
 
 ?>

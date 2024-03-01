@@ -25,6 +25,8 @@
             return array("email"=> $this->email,"password"=> $this->password );
         }
 
+        public function toString() {
+            return "Email: " . $this->email . ", Password: " . $this->password;
+        }
     }
-
 ?>

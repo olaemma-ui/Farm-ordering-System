@@ -35,7 +35,6 @@
                         return true;
                     }
                 }
-
                 return false;
             } else {
                 throw new Exception("Invalid Request Method", 400);
@@ -44,7 +43,7 @@
 
 
         /**
-         * 
+         * This method is
          * @param SignupRequest $request
          * @param string tableName
          */

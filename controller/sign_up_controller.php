@@ -6,8 +6,6 @@
     include '../../packages/value_object/signup_request.php';
     
     class SignupController {
-
-        
         public function init() {
             $sessionManager = new SessionManager();
             $autheService = new AuthenticationService($sessionManager);
@@ -25,7 +23,7 @@
 
             // Validate the fields in the login form
             $validationService->validate($sigUpnRequest);
-
+            
             if ($validationService->valid) {
                 $success = $autheService->signup($sigUpnRequest, 'customer');
                 if ($success) {
@@ -52,14 +50,11 @@
                 );
             }
         
-            // Return the response as JSON
+            //Return the response as JSON
             echo json_encode($response);
         }
     }
     
-    // Create an instance of SignupController and call the init method
+    //Create an instance of SignupController and call the init method
     $controller = new SignupController();
     $controller->init();
-    
-    
-?>
