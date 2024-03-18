@@ -1,14 +1,14 @@
 
 <?php 
-    require_once  './utils/session.php';
-    require_once './constants/session_keys.php';
+    require_once  './package/utils/session.php';
+    require_once './package/constants/session_keys.php';
 
     // Initialize the session manager
     $sessionManager = new SessionManager();
 
     // check if the user is already logged in
     if ($sessionManager->has(SessionKeys::$USER_ID)) {
-        // header('location:./index.php');
+        header('location:./index.php');
     }
 
     include("./includes/header.php");
@@ -129,7 +129,7 @@
         btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i>';
         
         let response = await fetch(
-            './controller/sign_in_controller.php',{
+            './package/controller/sign_in_controller.php',{
             method: 'POST',
             body:  formData,
         }).then((response) => response.json());

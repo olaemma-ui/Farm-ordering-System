@@ -74,12 +74,12 @@
                         <a class="nav-link" href="about.php">about</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="menu.php">menu</a>
+                        <a class="nav-link" href="menu.php">Products</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="chefs.php">chefs</a>
-                    </li>
-                    <li class="nav-item">
+                    </li> -->
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#">pages <i class="far fa-angle-down"></i></a>
                         <ul class="droap_menu">
                             <li><a href="menu_details.php">menu details</a></li>
@@ -96,10 +96,10 @@
                             <li><a href="privacy_policy.php">privacy policy</a></li>
                             <li><a href="terms_condition.php">terms and condition</a></li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
+                    </li> -->
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="blogs.php">blog</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="contact.php">contact</a>
                     </li>
