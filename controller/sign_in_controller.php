@@ -1,9 +1,9 @@
 
 <?php 
-    include  '../../packages/services/auth/authentication_service.php';
-    include  '../../packages/utils/session.php';
-    include  '../../packages/utils/validation.php';
-    include '../../packages/value_object/signin_request.php';
+    include  '../services/auth/authentication_service.php';
+    include  '../utils/session.php';
+    include  '../utils/validation.php';
+    include '../value_object/signin_request.php';
     
     class SigninController {
 
@@ -64,5 +64,3 @@
     //initialize the controller class
     $signInController=new SigninController();
     $signInController->init();
-    
-?>

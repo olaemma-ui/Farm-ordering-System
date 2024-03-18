@@ -1,6 +1,6 @@
 <?php 
-    include("../../packages/utils/database.php");
-    include("../../packages/services/base_service.php");
+    include("../utils/database.php");
+    include("../services/base_service.php");
     // include("../../packages/models/product_model.php");
 
     abstract class ProductRepository extends BaseService{

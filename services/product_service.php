@@ -1,6 +1,6 @@
 <?php
 
-include "../../packages/repository/product_repository.php";
+include "../repository/product_repository.php";
 
 class ProductService extends ProductRepository{
 

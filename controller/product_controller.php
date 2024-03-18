@@ -1,7 +1,7 @@
 <?php
 
-include "../../packages/services/product_service.php";
-include "../../packages/models/product_model.php";
+include "../services/product_service.php";
+include "../models/product_model.php";
 
 class ProductController extends BaseService {
 
@@ -18,6 +18,7 @@ class ProductController extends BaseService {
     public function getAProductById($productId) {
         
         $response = array(
+            'success' => true,
             'product' => $this->productService->getAProductById_($productId)
         );
         echo json_encode($response);
@@ -28,6 +29,7 @@ class ProductController extends BaseService {
      */
     public function getProductByName ($name){
         $response = array(
+            'success' => true,
             'products' => $this->productService->getProductByName($name)
         );
         echo json_encode($response);
@@ -36,6 +38,7 @@ class ProductController extends BaseService {
 
     public function getAllProductsInCategory($category) {
         $response = array(
+            'success' => true,
             'products' => $this->productService->getAllProductsInCategory($category)
         );
         echo json_encode($response);
@@ -43,6 +46,7 @@ class ProductController extends BaseService {
 
     public function getAllProducts() {
         $response = array(
+            'success' => true,
             'products' => $this->productService->getAllProducts()
          );
         echo json_encode($response);
@@ -51,6 +55,7 @@ class ProductController extends BaseService {
 
     public function createProduct($productModel) {
         $response = array(
+            'success' => true,
             'isSuccess' => $this->productService->createProduct_($productModel),
         );
         echo json_encode($response);
@@ -75,14 +80,14 @@ class ProductController extends BaseService {
 
                     // Create a model to be passed
                     $productModel = new ProductModel(
-                        productId: $this->generateUuidV4(),
-                        productName: $_POST['productName'],
-                        productDescription: $_POST['productDescription'],
-                        productPrice: $_POST['productPrice'],
-                        productPicture: $productPicture,
-                        createdAt: $createdAt,
-                        isAvailable: $isAvailable,
-                        category: $_POST['productCategory']
+                        $this->generateUuidV4(),
+                        $_POST['productName'],
+                        $_POST['productDescription'],
+                        $_POST['productPrice'],
+                        $productPicture,
+                        $createdAt,
+                        $isAvailable,
+                        $_POST['productCategory']
                     );
                     
                     $this->createProduct($productModel);
