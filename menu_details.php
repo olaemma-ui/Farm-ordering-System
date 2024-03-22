@@ -1,61 +1,51 @@
-
 <?php include './includes/header.php' ?>
 
-    <!--=============================
+<!--=============================
         BREADCRUMB START
     ==============================-->
-    <section class="page_breadcrumb" style="background: url(images/counter_bg.jpg);">
-        <div class="breadcrumb_overlay">
-            <div class="container">
-                <div class="breadcrumb_text">
-                    <h1>Product Details</h1>
-                    <ul>
-                        <li><a href="index.php">home</a></li>
-                        <li><a href="#">product Details</a></li>
-                    </ul>
-                </div>
+<section class="page_breadcrumb" style="background: url(images/counter_bg.jpg);">
+    <div class="breadcrumb_overlay">
+        <div class="container">
+            <div class="breadcrumb_text">
+                <h1>Product Details</h1>
+                <ul>
+                    <li><a href="index.php">home</a></li>
+                    <li><a href="#">product Details</a></li>
+                </ul>
             </div>
         </div>
-    </section>
-    <!--=============================
+    </div>
+</section>
+<!--=============================
         BREADCRUMB END
     ==============================-->
 
 
-    <!--=============================
+<!--=============================
         MENU DETAILS START
     ==============================-->
-    <section class="menu_details mt_100 xs_mt_75 mb_95 xs_mb_65">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-sm-10 col-md-9 wow fadeInUp" data-wow-duration="1s">
-                    <div class="exzoom hidden" id="exzoom">
-                        <div class="exzoom_img_box menu_details_images">
-                            <ul class='exzoom_img_ul'>
-                                <li><img class="zoom ing-fluid w-100" src="images/menu2_img_1.jpg" alt="product"></li>
-                                <li><img class="zoom ing-fluid w-100" src="images/menu2_img_2.jpg" alt="product"></li>
-                                <li><img class="zoom ing-fluid w-100" src="images/menu2_img_3.jpg" alt="product"></li>
-                                <li><img class="zoom ing-fluid w-100" src="images/menu2_img_4.jpg" alt="product"></li>
-                                <li><img class="zoom ing-fluid w-100" src="images/menu2_img_5.jpg" alt="product"></li>
-                                <li><img class="zoom ing-fluid w-100" src="images/menu2_img_6.jpg" alt="product"></li>
-                                <li><img class="zoom ing-fluid w-100" src="images/menu2_img_7.jpg" alt="product"></li>
-                                <li><img class="zoom ing-fluid w-100" src="images/menu2_img_8.jpg" alt="product"></li>
-                                <li><img class="zoom ing-fluid w-100" src="images/menu2_img_4.jpg" alt="product"></li>
-                            </ul>
-                        </div>
-                        <div class="exzoom_nav"></div>
-                        <p class="exzoom_btn">
-                            <a href="javascript:void(0);" class="exzoom_prev_btn"> <i class="far fa-chevron-left"></i>
-                            </a>
-                            <a href="javascript:void(0);" class="exzoom_next_btn"> <i class="far fa-chevron-right"></i>
-                            </a>
-                        </p>
+<section class="menu_details mt_100 xs_mt_75 mb_95 xs_mb_65">
+    
+    <div class="container">
+        <div id="msg">
+            
+        </div>
+        <div class="" id="productDetails"></div>
+    </div>
+</section>
+
+<!-- CART POPUT START -->
+<div class="cart_popup">
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fal fa-times"></i></button>
+                    <div class="cart_popup_img">
+                        <img src="images/popup_cart_img.jpg" alt="menu" class="img-fluid w-100">
                     </div>
-                </div>
-                <div class="col-lg-7 wow fadeInUp" data-wow-duration="1s">
-                    <div class="menu_details_text">
-                        <h2>Maxican Pizza Test Better</h2>
-                        <h3 class="price">$320.00 <del>$350.00</del> </h3>
+                    <div class="cart_popup_text">
+                        <a href="#" class="title">Maxican Pizza Test Better</a>
                         <p class="rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -64,27 +54,25 @@
                             <i class="far fa-star"></i>
                             <span>(201)</span>
                         </p>
-                        <p class="short_description">Pizza is a savory dish of Italian origin consisting of a usually
-                            round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often
-                            various other ingredients.</p>
+                        <h4 class="price">$320.00 <del>$350.00</del> </h4>
 
                         <div class="details_size">
                             <h5>select size</h5>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="large" checked>
-                                <label class="form-check-label" for="large">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="large01" checked>
+                                <label class="form-check-label" for="large01">
                                     large <span>+ $350</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="medium">
-                                <label class="form-check-label" for="medium">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="medium01">
+                                <label class="form-check-label" for="medium01">
                                     medium <span>+ $250</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="small">
-                                <label class="form-check-label" for="small">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="small01">
+                                <label class="form-check-label" for="small01">
                                     small <span>+ $150</span>
                                 </label>
                             </div>
@@ -93,14 +81,14 @@
                         <div class="details_extra_item">
                             <h5>select option <span>(optional)</span></h5>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="coca-cola">
-                                <label class="form-check-label" for="coca-cola">
+                                <input class="form-check-input" type="checkbox" value="" id="coca-cola01">
+                                <label class="form-check-label" for="coca-cola01">
                                     coca-cola <span>+ $10</span>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="7up">
-                                <label class="form-check-label" for="7up">
+                                <input class="form-check-input" type="checkbox" value="" id="7up01">
+                                <label class="form-check-label" for="7up01">
                                     7up <span>+ $15</span>
                                 </label>
                             </div>
@@ -119,358 +107,103 @@
                         </div>
                         <ul class="details_button_area d-flex flex-wrap">
                             <li><a class="common_btn" href="#">add to cart</a></li>
-                            <li><a class="common_btn" href="#">wishlist</a></li>
                         </ul>
-                    </div>
-                </div>
-                <div class="col-12 wow fadeInUp" data-wow-duration="1s">
-                    <div class="menu_description_area mt_100 xs_mt_70">
-                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
-                                    data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-                                    aria-selected="true">Description</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                    data-bs-target="#pills-contact" type="button" role="tab"
-                                    aria-controls="pills-contact" aria-selected="false">Reviews</button>
-                            </li>
-                        </ul>
-                        <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                                aria-labelledby="pills-home-tab" tabindex="0">
-                                <div class="menu_det_description">
-                                    <p>Ipsum dolor, sit amet consectetur adipisicing elit. Doloribus consectetur
-                                        ullam in? Beatae, dolorum ad ea deleniti ratione voluptatum similique omnis
-                                        voluptas tempora optio soluta vero veritatis reiciendis blanditiis architecto.
-                                        Debitis nesciunt inventore voluptate tempora ea incidunt iste, corporis, quo
-                                        cumque facere doloribus possimus nostrum sed magni quasi, assumenda autem!
-                                        Repudiandae nihil magnam provident illo alias vero odit repellendus, ipsa nemo
-                                        itaque. Aperiam fuga, magnam quia illum minima blanditiis tempore. vero
-                                        veritatis reiciendis blanditiis architecto. Debitis nesciunt inventore voluptate
-                                        tempora ea incidunt iste, corporis, quo cumque facere doloribus possimus nostrum
-                                        sed magni quasi</p>
-                                    <ul>
-                                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit Doloribus.</li>
-                                        <li>Dolor sit amet consectetur adipisicing elit. Earum itaque nesciunt.</li>
-                                        <li>Corporis quo cumque facere doloribus possimus nostrum sed magni quasi.</li>
-                                        <li>Incidunt iste corporis quo cumque facere doloribus possimus nostrum sed.
-                                        </li>
-                                        <li>Incidunt iste corporis quo cumque facere doloribus possimus nostrum sed.
-                                        </li>
-                                        <li>Architecto Debitis nesciunt inventore voluptate tempora ea.</li>
-                                        <li>Earum itaque nesciunt dolor laudantium placeat sed velit aspernatur.</li>
-                                        <li>Laudantium placeat sed velit aspernatur nobis quos quibusdam distinctio.
-                                        </li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum itaque nesciunt
-                                        dolor laudantium placeat sed velit aspernatur, nobis quos quibusdam distinctio
-                                        voluptatum officia vel sapiente enim, reprehenderit impedit beatae molestias
-                                        dolorum. A laborum consectetur sed quis exercitationem optio consequatur, unde
-                                        neque est odit, pariatur quae incidunt quasi dolorem nihil aliquid ut veritatis
-                                        porro eaque cupiditate voluptatem vel ad! Asperiores, praesentium. sit amet
-                                        consectetur adipisicing elit. Doloribus consectetur ullam in? Beatae, dolorum ad
-                                        ea deleniti ratione voluptatum similique omnis voluptas tempora optio soluta</p>
-
-                                    <ul>
-                                        <li>Reiciendis blanditiis architecto. Debitis nesciunt inventore voluptate
-                                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit Doloribus.</li>
-                                        <li>Dolor sit amet consectetur adipisicing elit. Earum itaque nesciunt.</li>
-                                        <li>Corporis quo cumque facere doloribus possimus nostrum sed magni quasi.</li>
-                                        <li>Incidunt iste corporis quo cumque facere doloribus possimus nostrum sed.
-                                        </li>
-                                        <li>Incidunt iste corporis quo cumque facere doloribus possimus nostrum sed.
-                                        </li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus consectetur
-                                        ullam in? Beatae, dolorum ad ea deleniti ratione voluptatum similique omnis
-                                        voluptas tempora optio soluta vero veritatis reiciendis blanditiis architecto.
-                                        Debitis nesciunt inventore voluptate tempora ea incidunt iste, corporis, quo
-                                        cumque facere doloribus possimus nostrum sed magni quasi, assumenda autem!
-                                        Repudiandae nihil magnam provident illo alias vero odit repellendus, ipsa nemo
-                                        itaque. Aperiam fuga, magnam quia illum minima blanditiis tempore.</p>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="pills-contact" role="tabpanel"
-                                aria-labelledby="pills-contact-tab" tabindex="0">
-                                <div class="review_area">
-                                    <div class="row">
-                                        <div class="col-lg-8">
-                                            <h4>04 reviews</h4>
-                                            <div class="comment pt-0 mt_20">
-                                                <div class="single_comment m-0 border-0">
-                                                    <img src="images/client_1.png" alt="review" class="img-fluid">
-                                                    <div class="single_comm_text">
-                                                        <h3>Michel Holder <span>29 oct 2022 </span></h3>
-                                                        <span class="rating">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fad fa-star-half-alt"></i>
-                                                            <i class="fal fa-star"></i>
-                                                            <b>(120)</b>
-                                                        </span>
-                                                        <p>Sure there isn't anything embarrassing hiidden in the
-                                                            middles of text. All erators on the Internet
-                                                            tend to repeat predefined chunks</p>
-                                                    </div>
-                                                </div>
-                                                <div class="single_comment">
-                                                    <img src="images/client_2.png" alt="review" class="img-fluid">
-                                                    <div class="single_comm_text">
-                                                        <h3>salina khan <span>29 oct 2022 </span></h3>
-                                                        <span class="rating">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fad fa-star-half-alt"></i>
-                                                            <i class="fal fa-star"></i>
-                                                            <b>(120)</b>
-                                                        </span>
-                                                        <p>Sure there isn't anything embarrassing hiidden in the
-                                                            middles of text. All erators on the Internet
-                                                            tend to repeat predefined chunks</p>
-                                                    </div>
-                                                </div>
-                                                <div class="single_comment">
-                                                    <img src="images/client_3.png" alt="review" class="img-fluid">
-                                                    <div class="single_comm_text">
-                                                        <h3>Mouna Sthesia <span>29 oct 2022 </span></h3>
-                                                        <span class="rating">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fad fa-star-half-alt"></i>
-                                                            <i class="fal fa-star"></i>
-                                                            <b>(120)</b>
-                                                        </span>
-                                                        <p>Sure there isn't anything embarrassing hiidden in the
-                                                            middles of text. All erators on the Internet
-                                                            tend to repeat predefined chunks</p>
-                                                    </div>
-                                                </div>
-                                                <div class="single_comment">
-                                                    <img src="images/client_4.png" alt="review" class="img-fluid">
-                                                    <div class="single_comm_text">
-                                                        <h3>marjan janifar <span>29 oct 2022 </span></h3>
-                                                        <span class="rating">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fad fa-star-half-alt"></i>
-                                                            <i class="fal fa-star"></i>
-                                                            <b>(120)</b>
-                                                        </span>
-                                                        <p>Sure there isn't anything embarrassing hiidden in the
-                                                            middles of text. All erators on the Internet
-                                                            tend to repeat predefined chunks</p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="pagination mt_30">
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <nav aria-label="...">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#"><i
-                                                                                class="fas fa-long-arrow-alt-left"></i></a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">1</a></li>
-                                                                    <li class="page-item active"><a class="page-link"
-                                                                            href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#"><i
-                                                                                class="fas fa-long-arrow-alt-right"></i></a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="post_review">
-                                                <h4>write a Review</h4>
-                                                <form>
-                                                    <p class="rating">
-                                                        <span>select your rating : </span>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                    </p>
-                                                    <div class="row">
-                                                        <div class="col-xl-12">
-                                                            <input type="text" placeholder="Name">
-                                                        </div>
-                                                        <div class="col-xl-12">
-                                                            <input type="email" placeholder="Email">
-                                                        </div>
-                                                        <div class="col-xl-12">
-                                                            <textarea rows="3"
-                                                                placeholder="Write your review"></textarea>
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <button class="common_btn" type="submit">submit
-                                                                review</button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="related_menu mt_90 xs_mt_60">
-                <h2>Other Products</h2>
-                <div id="productFlex" class="row related_product_slider">
-                    
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CART POPUT START -->
-    <div class="cart_popup">
-        <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
-                                class="fal fa-times"></i></button>
-                        <div class="cart_popup_img">
-                            <img src="images/popup_cart_img.jpg" alt="menu" class="img-fluid w-100">
-                        </div>
-                        <div class="cart_popup_text">
-                            <a href="#" class="title">Maxican Pizza Test Better</a>
-                            <p class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                                <span>(201)</span>
-                            </p>
-                            <h4 class="price">$320.00 <del>$350.00</del> </h4>
-
-                            <div class="details_size">
-                                <h5>select size</h5>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="large01"
-                                        checked>
-                                    <label class="form-check-label" for="large01">
-                                        large <span>+ $350</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="medium01">
-                                    <label class="form-check-label" for="medium01">
-                                        medium <span>+ $250</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="small01">
-                                    <label class="form-check-label" for="small01">
-                                        small <span>+ $150</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="details_extra_item">
-                                <h5>select option <span>(optional)</span></h5>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="coca-cola01">
-                                    <label class="form-check-label" for="coca-cola01">
-                                        coca-cola <span>+ $10</span>
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="7up01">
-                                    <label class="form-check-label" for="7up01">
-                                        7up <span>+ $15</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="details_quentity">
-                                <h5>select quentity</h5>
-                                <div class="quentity_btn_area d-flex flex-wrapa align-items-center">
-                                    <div class="quentity_btn">
-                                        <button class="btn btn-danger"><i class="fal fa-minus"></i></button>
-                                        <input type="text" placeholder="1">
-                                        <button class="btn btn-success"><i class="fal fa-plus"></i></button>
-                                    </div>
-                                    <h3>$320.00</h3>
-                                </div>
-                            </div>
-                            <ul class="details_button_area d-flex flex-wrap">
-                                <li><a class="common_btn" href="#">add to cart</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- CART POPUT END -->
+</div>
+<!-- CART POPUT END -->
 
-    <!--=============================
+<!--=============================
         MENU DETAILS END
     ==============================-->
 
 
-    <!--=============================
+<!--=============================
         FOOTER START
     ==============================-->
 <?php include './includes/footer.php' ?>
-<script src="./package/components/product_component.js"> </script>
-    <script>
-        var productFlex = document.querySelector("#productFlex");
+<script src="./package//components//components.js"> </script>
+<script>
+    var productFlex = document.querySelector("#productDetails");
 
-        window.addEventListener('load', async (e)=>{
-            e.preventDefault();
+    window.addEventListener('load', async (e) => {
+        e.preventDefault();
 
-            productFlex.innerHTML = '<div class="w-100 d-flex justify-content-center"> <i class="fa fa-spinner fa-spin fa-lg text-primary mx-auto"></i> </div>';
-            
-            let response = await fetch(
-                './package/controller/product_controller.php?action=getAll',{
-                method: 'GET',
+        productFlex.innerHTML = '<div class="w-100 d-flex justify-content-center"> <i class="fa fa-spinner fa-spin fa-lg text-primary mx-auto"></i> </div>';
+        const id = window.location.href.split("?")[1].split("/")[0].split('=')[1].replace('#', '');
+        var formData = new FormData();
+
+        formData.append('productId', id);
+        let response = await fetch(
+            `./package/controller/product_controller.php?action=getById`, {
+                method: 'POST',
+                body: formData,
             }).then((response) => response.json());
-            
-            console.log({response});
-            if (response.success) {
-                productFlex.innerHTML = '';
-                var count = 0;
-                response.products.forEach(element => {
-                    if(count < 8) productFlex.innerHTML += ProductCard(element);
-                    count ++;
-                });
+
+        console.log({
+            response
+        });
+        if (response.success) {
+            if (response.product) {
+                productFlex.innerHTML = ProductDetails(response.product);
+                let input = document.querySelector('#qty');
+                
+                document.querySelector('#plus').addEventListener('click', (e)=>{
+                    if (input.value) {
+                        input.value = Number(input.value)+1;
+                    }else input.value = 1;
+                })
+               
+                document.querySelector('#minus').addEventListener('click', (e)=>{
+                    if (input.value) {
+                        input.value = Math.max(Number(input.value)-1, 1);
+                    }else input.value = 1;
+                })
+                
+                document.querySelector('#add_to_cart').addEventListener('click', async (e)=>{
+                    e.preventDefault()
+                    formData.append('productId',id)
+                    formData.append('productName',response.product.productName)
+                    formData.append('productPicture',response.product.productPicture)
+                    formData.append('price',response.product.productPrice)
+                    formData.append('quantity', input.value)
+                    formData.append('category', response.product.category)
+                    formData.append('action', 'addToCart')
+
+                    let resp = await fetch(
+                    `./package/controller/cart_controller.php`, {
+                        method: 'POST',
+                        body: formData,
+                    }).then((response) => response.text());
+
+                    console.log({resp});
+                    if (resp.success) {
+                        document.querySelector('#msg').innerHTML = `
+                        <div class="alert alert-success">
+                            Added to cart 
+                        </div>
+                        `;
+                    }
+
+                })
+
+            } else {
+                productFlex.innerHTML = `<h1> Product Not Found <h1/>`;
             }
-            
-        });
+        }
+
+    });
 
 
-         // get the submit button
-        let btn = document.querySelector('#search_btn');
-        let searchInput = document.querySelector('#search');
+    // get the submit button
+    let btn = document.querySelector('#search_btn');
+    let searchInput = document.querySelector('#search');
 
-        document.querySelector('#search_form').addEventListener('submit', async (e)=>{
-            e.preventDefault();
-            window.location.assign(`./menu.php?search=${searchInput.value}`);
-        });
-            
-
-        
-    </script>
+    document.querySelector('#search_form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        window.location.assign(`./menu.php?search=${searchInput.value}`);
+    });
+</script>

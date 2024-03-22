@@ -369,7 +369,7 @@
     ==============================-->
 
     <?php include './includes/footer.php'; ?>
-    <script src="./package/components/product_component.js"> </script>
+    <script src="./package/components/components.js"> </script>
     <script>
         var productFlex = document.querySelector("#productFlex");
 

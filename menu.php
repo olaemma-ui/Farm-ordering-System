@@ -39,15 +39,7 @@
                             <input type="text" id="search" name="productName" placeholder="search...">
                         </div>
                     </div>
-                    <!-- <div class="col-lg-4 col-md-4">
-                        <div class="menu_search">
-                            <div class="select_area">
-                                <select class="select_js" id="category">
-                                    <option value="AL">default sorting</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div> -->
+                   
                     <div class="col-lg-2 col-md-3">
                         <div class="menu_search">
                             <button class="common_btn" id="search_btn" type="submit">Search</button>
@@ -57,26 +49,6 @@
             </form>
 
             <div class="row" id="productFlex"></div>
-
-            <!-- <div class="pagination mt_50">
-                <div class="row">
-                    <div class="col-12">
-                        <nav aria-label="...">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link" href="#"><i class="fas fa-long-arrow-alt-left"></i></a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#"><i class="fas fa-long-arrow-alt-right"></i></a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </section>
 
@@ -178,7 +150,16 @@
 
         document.querySelector('#search').addEventListener('keyup', async (e)=>{
             e.preventDefault();
+            fetchProducts(form);
+        });
 
+
+        window.onload = fetchProducts(form);
+
+
+
+        async function fetchProducts(form) {
+            
             productFlex.innerHTML = `
                 <div class="w-100 d-flex justify-content-center"> 
                     <i class="fa fa-spinner fa-spin fa-lg text-primary mx-auto"></i> 
@@ -201,8 +182,7 @@
                     productFlex.innerHTML += ProductCard(element);
                 });
             }
-            
-        });
+        }
             
 
         
