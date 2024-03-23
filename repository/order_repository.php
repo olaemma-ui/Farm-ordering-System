@@ -9,8 +9,9 @@
          /**    
          * This method manages the application select query
          * @param string $orderId
+         * @return OrderModel
          */
-        public function getOrderById ($orderId) {
+        public function getOrderById_($orderId) {
             $this->database = new Database();
 
             // Retrieve order by ID
@@ -19,7 +20,27 @@
 
         
             if ($result) {
-                $result = $result->fetch_all(MYSQLI_ASSOC);
+                $result = $result->fetch_assoc();
+                return $result;
+            }
+            die("Error executing query: " . $this->database->connection->error);
+        }
+        
+         /**    
+         * This method manages the application select query
+         * @param string $userId
+         * @return OrderModel
+         */
+        public function getAllOrders_($userId) {
+            $this->database = new Database();
+
+            // Retrieve order by ID
+            $sql = "SELECT * FROM orders WHERE userId = $userId";
+            $result = $this->database->connection->query($sql);
+
+        
+            if ($result) {
+                $result = $result->fetch_assoc();
                 return $result;
             }
             die("Error executing query: " . $this->database->connection->error);
@@ -29,7 +50,7 @@
          * 
          * @param OrderModel $order
          */
-        public function createOrder($order) {  
+        public function createOrder_($order) {  
             $this->database = new Database();
             $uuid = $this->generateUuidV4();
 

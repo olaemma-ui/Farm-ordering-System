@@ -7,7 +7,7 @@ class ProductService extends ProductRepository{
     /**
      * This method gets a product from the database
      * @param productId The id of the product
-     * @return ProductModel the return type
+     * @return array the return type
      */
     public function getAProductById_($productId){
         
@@ -18,7 +18,6 @@ class ProductService extends ProductRepository{
             );
 
             if($productModel){
-               
                 //returns the product model
                 return $productModel->toArray();
             }
@@ -83,7 +82,7 @@ class ProductService extends ProductRepository{
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $result = $this->getProductByName(
-                $name
+                $name   
             );
 
             if($result){

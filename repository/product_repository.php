@@ -25,7 +25,16 @@
 
             if ($result) {
                 $result = $result->fetch_assoc();
-                return $result;
+                return new ProductModel(
+                    $result["productId"],
+                    $result["productName"],
+                    $result["productDescription"],
+                    $result["productPrice"],
+                    $result["productPicture"],
+                    $result["createdAt"],
+                    $result["isAvailable"],
+                    $result["category"]
+                );
             }
             die("Error executing query: " . $this->database->connection->error);
         }

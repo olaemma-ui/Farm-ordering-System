@@ -1,3 +1,5 @@
+
+
 const ProductCard = ({
     productId,
     productName,
@@ -30,6 +32,64 @@ const ProductCard = ({
                 </div>
             </div>
         </div>
+    `);
+}
+
+
+
+const ProductDetails = ({
+    productId,
+    productName,
+    productDescription,
+    productPrice,
+    productPicture,
+    createdAt,
+    isAvailable,
+    category
+}) => {
+
+    return (`
+            <div class="row">
+                <div class="col-lg-5 col-sm-10 col-md-9 wow fadeInUp" data-wow-duration="1s">
+                    <div class="exzoom hidden" id="exzoom">
+                        <div class="exzoom_img_box menu_details_images">
+                            <ul class='exzoom_img_ul'>
+                                <li><img class="zoom ing-fluid w-100" src="${productPicture}" alt="product"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 wow fadeInUp" data-wow-duration="1s">
+                    <div class="menu_details_text">
+                        <h2>${productName}</h2>
+                        <h3 class="price">$${productPrice}.00</h3>
+                        <p class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                        </p>
+                        <p class="short_description">${productDescription}</p>
+
+                        <div class="details_quentity">
+                            <h5>select quentity</h5>
+                            <div class="quentity_btn_area d-flex flex-wrapa align-items-center">
+                                <div class="quentity_btn">
+                                    <button class="btn btn-danger" id="minus"><i class="fal fa-minus"></i></button>
+                                    <input type="text" readonly value="1" id="qty" placeholder="1">
+                                    <button class="btn btn-success" id="plus"><i class="fal fa-plus"></i></button>
+                                </div>
+                                <h3 id="cost">$</h3>
+                            </div>
+                        </div>
+                        <ul class="details_button_area d-flex flex-wrap">
+                            <li><a class="common_btn" id="add_to_cart" href="#">add to cart</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
     `);
 }
 
@@ -79,5 +139,56 @@ const CartModal = ({
             </div>
         </div>
     </div>
+    `);
+}
+
+
+
+
+const CartItems = ({
+    productId,
+    productName,
+    productPicture,
+    price,
+    quantity,
+    category
+    
+}) => {
+    let tp = '';
+    price.split(',').forEach(element => {
+        tp += new String(element);
+    });
+
+    return (`
+        <tr>
+            <td class="pro_img">
+                <img src="${productPicture}" alt="product" class="img-fluid w-100">
+            </td>
+
+            <td class="pro_name">
+                <a href="#">${productName}</a>
+                <span>${category}</span>
+            </td>
+
+            <td class="pro_status">
+                <h6>$${price}</h6>
+            </td>
+
+            <td class="pro_select">
+                <div class="quentity_btn">
+                    <button class="btn btn-danger" id="minus"><i class="fal fa-minus"></i></button>
+                    <input type="text" value="${quantity}" id="qty" readonly value placeholder="1">
+                    <button class="btn btn-success" id="plus"><i class="fal fa-plus"></i></button>
+                </div>
+            </td>
+
+            <td class="pro_tk">
+                <h6>$${tp * quantity}</h6>
+            </td>
+
+            <td class="pro_icon">
+                <a href="#" id="removeItem"><i class="far fa-times"></i></a>
+            </td>
+        </tr>
     `);
 }

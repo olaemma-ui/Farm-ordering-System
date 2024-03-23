@@ -7,6 +7,7 @@ class OrderModel {
     private string $orderStatus;
     private int $userId;
     private int $orderId;
+    private string $address;
 
     public function __construct(
         int $transactionId,
@@ -14,7 +15,8 @@ class OrderModel {
         string $orderDate,
         string $orderStatus,
         int $userId,
-        int $orderId
+        int $orderId,
+        string $address
     ) {
         $this->transactionId = $transactionId;
         $this->totalCost = $totalCost;
@@ -22,6 +24,7 @@ class OrderModel {
         $this->orderStatus = $orderStatus;
         $this->userId = $userId;
         $this->orderId = $orderId;
+        $this->address = $address;
     }
 
     public function getTransactionId(): int {
@@ -48,6 +51,10 @@ class OrderModel {
         return $this->orderId;
     }
 
+    public function getAddress(): string {
+        return $this->address;
+    }
+
     public function toArray(): array {
         return [
             'transactionId' => $this->transactionId,
@@ -56,6 +63,7 @@ class OrderModel {
             'orderStatus' => $this->orderStatus,
             'userId' => $this->userId,
             'orderId' => $this->orderId,
+            'address' => $this->address,
         ];
     }
 }
