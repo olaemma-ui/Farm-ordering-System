@@ -8,8 +8,9 @@
      * @property connection this defines the database connection to mysql
      * @property connect this method is called to connect to the database
      */
-    
+    // 
      class Database {
+        
         
         // server name
         private $servername = "localhost";
