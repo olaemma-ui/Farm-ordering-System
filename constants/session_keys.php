@@ -9,6 +9,12 @@
         // session storage key for user id
         public static $USER_ID = 'USER_ID';
         
+        // session storage key for user id
+        public static $USER_NAME = 'USER_NAME';
+        
+        // session storage key for user id
+        public static $USER_EMAIL = 'USER_EMAIL';
+        
         // session storage key for carts
         public static $CART = 'CART';
         

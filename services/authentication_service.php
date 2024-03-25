@@ -1,8 +1,8 @@
 <?php 
 
     // include "./utils/session.php";
-    include("../../packages/constants/session_keys.php");
-    include("../../packages/repository/auth_repository.php");
+    include("../constants/session_keys.php");
+    include("../repository/auth_repository.php");
 
     class AuthenticationService extends AuthenticationRepository{
         
@@ -31,8 +31,15 @@
 
                 if($result){
                     if (count($result) > 0) {
+                        
                         $this-> sessionManager-> set(SessionKeys::$USER_ID, $result['user_id']);
-                        return true;
+                        $this-> sessionManager-> set(SessionKeys::$USER_EMAIL, $result['email']);
+                        $this-> sessionManager-> set(SessionKeys::$USER_NAME, "".$result['firstName']." ".$result['lastName']."");
+                        
+                        return array(
+                            'isLogedIn'=> true,
+                            'data'=> $result
+                        );
                     }
                 }
                 return false;

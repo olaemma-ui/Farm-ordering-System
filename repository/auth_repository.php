@@ -13,12 +13,8 @@
          */
         public function findByEmailAndPassword ($request, $table) {
             $this->database = new Database();
-
-            // echo '{"Hello": "' . $request->toString(). '"}';
-            
             $email = $request->getEmail();
-            // $password = sha1($request->getPassword());
-            $password = $request->getPassword();
+            $password = sha1($request->getPassword());
 
 
             $query = "SELECT * FROM $table 

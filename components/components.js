@@ -192,3 +192,36 @@ const CartItems = ({
         </tr>
     `);
 }
+
+
+const Address = ({
+    street,
+    city,
+    state,
+    country,
+    addressId,
+    address,
+    category
+}) => {
+
+    return (`
+        <div class="col-md-6">
+            <div class="checkout_single_address">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="${addressId}" 
+                        name="flexRadioDefault"
+                        id="${addressId}">
+                    <label class="form-check-label" for="office">
+                        <span class="icon">${
+                            category.toLowerCase() == 'home' 
+                                ? '<i class="fas fa-home"></i>'
+                                : '<i class="far fa-car-building"></i>'
+                            } ${category} </span>
+                        <span class="address">${street}, ${city} ${state} ${country}.</span>
+                        ${address && `<span class="address">${address}.</span>`}
+                    </label>
+                </div>
+            </div>
+        </div>
+    `);
+}

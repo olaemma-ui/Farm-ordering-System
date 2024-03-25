@@ -1,6 +1,6 @@
 
 <?php 
-    include  '../services/auth/authentication_service.php';
+    include  '../services/authentication_service.php';
     include  '../utils/session.php';
     include  '../utils/validation.php';
     include '../value_object/signin_request.php';
@@ -9,8 +9,8 @@
 
         public function init() {
 
-            if (isset($_GET['tableName'])) {
-                $sessionManager = new SessionManager();
+        
+            $sessionManager = new SessionManager();
             $autheService = new AuthenticationService($sessionManager);
             $validationService = new ValidateFields();
 
@@ -21,14 +21,15 @@
             $validationService->validate($signinRequest);
 
             if ($validationService->valid) {
-                $isLoggedIn = $autheService->login($signinRequest, $_GET['tableName']);
-                if ($isLoggedIn) {
+                $isLoggedIn = $autheService->login($signinRequest, 'customer');
+                if ($isLoggedIn['isLogedIn']) {
 
                     // Create a response array
                     $response = array(
                         'success' => true,
                         'message' => 'Login Successful',
-                        'statusCode' => '00'
+                        'statusCode' => '00',
+                        'data' => $isLoggedIn['data']
                     );
                 } else {
 
@@ -47,15 +48,8 @@
                     'message' => 'Form validation Error',
                     'statusCode' => '96'
                 );
-            }}
-            else{
-                $response = array(
-                    "success" => false,
-                    "message" => "Table name required params",
-                    "statusCode" => "96"
-                );
             }
-        
+
             // Return the response as JSON
             echo json_encode($response);
         }

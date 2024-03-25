@@ -1,6 +1,6 @@
 
 <?php 
-    include  '../services/auth/authentication_service.php';
+    include  '../services/authentication_service.php';
     include  '..//utils/session.php';
     include  '../utils/validation.php';
     include '../value_object/signup_request.php';
