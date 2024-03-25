@@ -8,7 +8,7 @@
 
     // check if the user is already logged in
     if ($sessionManager->has(SessionKeys::$USER_ID)) {
-        header('location:./index.php');
+        // header('location:./index.php');
     }
 
     include("./includes/header.php");
@@ -138,6 +138,7 @@
         btn.innerHTML = 'Login';
 
         if (response.success) {
+            localStorage.setItem('user', JSON.stringify(response.data));
             window.location.assign('./')
         }else{
             alert.classList.remove('d-none')

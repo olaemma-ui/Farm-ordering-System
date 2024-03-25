@@ -49,82 +49,49 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form>
+                                                <form id="address-form">
                                                     <div class="row">
+                                                        
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="check_single_form">
-                                                                <input type="text" placeholder="First Name">
+                                                                <input type="text" name="country" readonly placeholder="Country *" value="Nigeria">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="check_single_form">
-                                                                <input type="text" placeholder="Last Name">
+                                                                <input type="text" name="street" placeholder="Street Address *">
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-12 col-lg-12 col-xl-12">
+
+                                                        <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="check_single_form">
-                                                                <input type="text"
-                                                                    placeholder="Company Name (Optional)">
+                                                                <input type="text" name="city" placeholder="Town / City *">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="check_single_form">
-                                                                <select class="select_js">
-                                                                    <option value="">select country</option>
-                                                                    <option value="">bangladesh</option>
-                                                                    <option value="">nepal</option>
-                                                                    <option value="">japan</option>
-                                                                    <option value="">korea</option>
-                                                                    <option value="">thailand</option>
+                                                                <input type="text" name="state" placeholder="State *">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-12 col-xl-6">
+                                                            <div class="check_single_form">
+                                                                <input type="text" name="zipCode" placeholder="Zip *">
+                                                            </div>
+                                                        </div>
+                                                       
+                                                        <div class="col-md-6 col-lg-12 col-xl-6">
+                                                            <div class="check_single_form">
+                                                                <select name="category" class="select_js">
+                                                                    <option value="">select category</option>
+                                                                    <option value="Home">Home</option>
+                                                                    <option value="Office">Office</option>
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6 col-lg-12 col-xl-6">
-                                                            <div class="check_single_form">
-                                                                <input type="text" placeholder="Street Address *">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6 col-lg-12 col-xl-6">
-                                                            <div class="check_single_form">
-                                                                <input type="text"
-                                                                    placeholder="Apartment, suite, unit, etc. (optional)">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6 col-lg-12 col-xl-6">
-                                                            <div class="check_single_form">
-                                                                <input type="text" placeholder="Town / City *">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6 col-lg-12 col-xl-6">
-                                                            <div class="check_single_form">
-                                                                <input type="text" placeholder="State *">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6 col-lg-12 col-xl-6">
-                                                            <div class="check_single_form">
-                                                                <input type="text" placeholder="Zip *">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6 col-lg-12 col-xl-6">
-                                                            <div class="check_single_form">
-                                                                <input type="text" placeholder="Phone *">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6 col-lg-12 col-xl-6">
-                                                            <div class="check_single_form">
-                                                                <input type="email" placeholder="Email *">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-12 col-lg-12 col-xl-12">
-                                                            <div class="check_single_form">
-                                                                <h5>Additional Information</h5>
-                                                                <textarea cols="3" rows="4"
-                                                                    placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
-                                                            </div>
-                                                        </div>
+                                                       
                                                         <div class="col-12">
                                                             <div class="check_single_form m-0">
-                                                                <button type="submit" class="common_btn">add
+                                                                <button type="submit" name="btn" id="address-form-btn" class="common_btn">add
                                                                     address</button>
                                                             </div>
                                                         </div>
@@ -136,74 +103,23 @@
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="checkout_single_address">
-                                        <div class="form-check">
-                                            <label class="form-check-label" for="home">
-                                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                    id="home">
-                                                <span class="icon"><i class="fas fa-home"></i> home</span>
-                                                <span class="address">Blackwell Street,Dry Creek,Alaska Blackwell
-                                                    Street,Dry Creek,Alaska.</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="checkout_single_address">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="office">
-                                            <label class="form-check-label" for="office">
-                                                <span class="icon"><i class="far fa-car-building"></i> office</span>
-                                                <span class="address">Blackwell Street,Dry Creek,Alaska Blackwell
-                                                    Street,Dry Creek,Alaska.</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="checkout_single_address">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="office2">
-                                            <label class="form-check-label" for="office2">
-                                                <span class="icon"><i class="far fa-car-building"></i> office
-                                                    2</span>
-                                                <span class="address">Blackwell Street,Dry Creek,Alaska Blackwell
-                                                    Street,Dry Creek,Alaska.</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="checkout_single_address">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="home2">
-                                            <label class="form-check-label" for="home2">
-                                                <span class="icon"><i class="fas fa-home"></i> home 2</span>
-                                                <span class="address">Blackwell Street,Dry Creek,Alaska Blackwell
-                                                    Street,Dry Creek,Alaska.</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="row" id="addresses">
+                               
                             </div>
 
                         </div>
                     </div>
                 </div>
+                
                 <div class="col-xl-4 col-lg-5 wow fadeInUp" data-wow-duration="1s">
                     <div id="sticky_sidebar" class="cart_list_footer_button">
                         <div class="cart_list_footer_button_text">
                             <h6 id="count"> </h6>
                             <p>subtotal: <span id="sub-total">$00.00</span></p>
-                            <p>delivery: <span id="delivery-fee">$100.00</span></p>
-                            <p>discount: <span id="discount">$0.00</span></p>
-                            <p class="total"><span>total:</span> <span id="total">$00.00</span></p>
-                            <a class="common_btn" href="check_out.php">checkout</a>
+                            <p>delivery: <span id="delivery-fee">NGN 100.00</span></p>
+                            <p>discount: <span id="discount">NGN 0.00</span></p>
+                            <p class="total"><span>total:</span> <span id="total">NGN 00.00</span></p>
+                            <a class="common_btn" id="checkout" href="#">checkout</a>
                         </div>
                     </div>
                 </div>
@@ -219,10 +135,19 @@
         FOOTER START
     ==============================-->
     <?php include "./includes/footer.php" ?>
-    <script src="./package//components//components.js"> </script>
-
+    
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="./package/components/components.js"> </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
+
+        const CHECKOUT_BTN = document.querySelector("#checkout");
+        let ALL_ADDRESS = document.querySelectorAll("[name=flexRadioDefault]");
+        
+        const ADDRESS = document.querySelector("#addresses");
+        const ADDRESS_FORM = document.querySelector("#address-form");
+        const ADDRESS_FORM_BTN = document.querySelector("#address-form-btn");
 
         const TOTAL = document.querySelector("#total");
         const SUB_TOTAL = document.querySelector("#sub-total");
@@ -236,23 +161,197 @@
         let total = 0;
         let subTotal = 0;
         let disvount = 0;
+        let selected_address;
 
         let cartItems = [];
+        let addresses = [];
 
 
         function updateUi(){
-            TABLE_BODY.innerHTML = TABLE_HEADING.innerHTML;
             total = 0;
             cartItems.forEach(element => {
-                TABLE_BODY.innerHTML += CartItems(element);            
-                total += (element.quantity * element.price);
-                addEvents(element);
+                total += (element.quantity * element.price.replace(',', ''));
             });
             
-            SUB_TOTAL.innerHTML = `$${total}.00`;
+            addresses.forEach(element => {
+                ADDRESS.innerHTML += Address(element);
+            });
+            
+            SUB_TOTAL.innerHTML = `NGN ${total}.00`;
             COUNT.innerHTML = `total cart (${cartItems.length})`;
-            TOTAL.innerHTML = `$${total > 0 ? total + dlvFee : total}.00`;
-            DELIVERY_FEE.innerHTML = `$${total > 0 ? dlvFee : 0}.00`;
+            TOTAL.innerHTML = `NGN ${total > 0 ? total + dlvFee : total}.00`;
+            DELIVERY_FEE.innerHTML = `NGN ${total > 0 ? dlvFee : 0}.00`;
+            ALL_ADDRESS = document.querySelectorAll("[name=flexRadioDefault]");
         }
+
+        window.addEventListener('load', async (e) => {
+            e.preventDefault();
+            
+            var formData = new FormData();
+
+            formData.append('action', 'getCart');
+            let response = await fetch(
+            `./package/controller/cart_controller.php`, {
+                method: 'POST',
+                body: formData,
+            }).then((response) => response.json());
+
+            if (response.success) {
+                if (response.cartItems) {
+                    Object.entries(response.cartItems).forEach(([key, value], index) => {
+                        cartItems.push(value);
+                    });
+                    updateUi();
+                }
+            }
+
+        });
+       
+        window.addEventListener('load', async (e) => {
+            e.preventDefault();
+            
+            var formData = new FormData();
+
+            let response = await fetch(
+            `./package/controller/address_controller.php?action=getAll`, {
+                method: 'GET',
+            }).then((response) => response.json());
+
+            console.log({response});
+            if (response.success) {
+                if (response.addresses) {
+                    Object.entries(response.addresses).forEach(([key, value], index) => {
+                        addresses.push(value)
+                    });
+                    updateUi();
+                }else  ADDRESS.innerHTML = '<h1> No Address added <h1/>';
+            }
+
+        });
+        
+        
+        ADDRESS_FORM.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            var formData = new FormData(ADDRESS_FORM);
+            formData.append('action', 'create');
+
+            let response = await fetch(
+            `./package/controller/address_controller.php`, {
+                method: 'POST',
+                body: formData,
+            }).then((response) => response.json());
+
+            console.log({response});
+            if (response.isSuccess) {
+                updateUi();
+            }
+
+        });
+
+
+        CHECKOUT_BTN.addEventListener('click', (e)=>{
+            e.preventDefault();
+            
+            ALL_ADDRESS.forEach(element => {
+                if (element.checked) {
+                    selected_address = element.value;
+                }
+            });
+
+            if (selected_address) {
+                payWithPaystack(e);
+            }
+        }, false)
+        
+        function payWithPaystack(e) {
+            e.preventDefault();
+
+            swal({
+  text: 'Search for a movie. e.g. "La La Land".',
+  content: "input",
+  button: {
+    text: "Search!",
+    closeModal: false,
+  },
+})
+.then(name => {
+  if (!name) throw null;
+ 
+  return fetch(`https://itunes.apple.com/search?term=${name}&entity=movie`);
+})
+.then(results => {
+  return results.json();
+})
+.then(json => {
+  const movie = json.results[0];
+ 
+  if (!movie) {
+    return swal("No movie was found!");
+  }
+ 
+  const name = movie.trackName;
+  const imageURL = movie.artworkUrl100;
+ 
+  swal({
+    title: "Top result:",
+    text: name,
+    icon: imageURL,
+  });
+})
+.catch(err => {
+  if (err) {
+    swal("Oh noes!", "The AJAX request failed!", "error");
+  } else {
+    swal.stopLoading();
+    swal.close();
+  }
+});
+
+
+            // let handler = PaystackPop.setup({
+            //     key: 'pk_test_0268a41a15fb1dd54888593da490e5157b9b6ac5', // Replace with your public key
+            //     email: JSON.parse(localStorage.getItem('user'))['email'],
+            //     amount: total * 100,
+            //     ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+            //     // label: "Optional string that replaces customer email"
+            //     onClose: function(){
+            //         // alert('Window closed.');
+            //     },
+            //     callback: function(response){
+            //         createOrder(response.reference);
+            //     }
+            // });
+
+            // handler.openIframe();
+        }
+
+
+        async function createOrder(reference) {
+            
+            var formData = new FormData();
+            formData.append('action', 'create');
+            formData.append('transactionId', `Ref-${reference}`);
+            formData.append('totalCost', total);
+            formData.append('address', JSON.stringify(addresses.filter((e)=> e.addressId == selected_address)[0]));
+
+            let response = await fetch(
+            `./package/controller/order_controller.php`, {
+                method: 'POST',
+                body: formData,
+            }).then((response) => response.json());
+
+            console.log({response});
+            if (response.isSuccess) {
+                swal("Good job!", "You clicked the button!", "success")
+                .then((v)=>  window.location.assign('./'))
+            }
+
+        }
+
+
+
+
+
 
     </script>

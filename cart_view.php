@@ -82,10 +82,10 @@
                             <div class="col-xl-5 col-md-6">
                                 <div class="cart_list_footer_button_text">
                                     <h6 id="count"> </h6>
-                                    <p>subtotal: <span id="sub-total">$00.00</span></p>
-                                    <p>delivery: <span id="delivery-fee">$100.00</span></p>
-                                    <p>discount: <span id="discount">$0.00</span></p>
-                                    <p class="total"><span>total:</span> <span id="total">$00.00</span></p>
+                                    <p>subtotal: <span id="sub-total">NGN 00.00</span></p>
+                                    <p>delivery: <span id="delivery-fee">NGN 100.00</span></p>
+                                    <p>discount: <span id="discount">NGN 0.00</span></p>
+                                    <p class="total"><span>total:</span> <span id="total">NGN 00.00</span></p>
                                     <a class="common_btn" href="check_out.php">checkout</a>
                                 </div>
                             </div>
@@ -103,6 +103,8 @@
 
     <script src="./package//components//components.js"> </script>
     <script>
+        
+        const TABLE_BODY_INITIAL = document.querySelector("#tbl-body");
         
         const TABLE_BODY = document.querySelector("#tbl-body");
         const TABLE_HEADING = document.querySelector("#tbl-head");
@@ -128,14 +130,14 @@
             total = 0;
             cartItems.forEach(element => {
                 TABLE_BODY.innerHTML += CartItems(element);            
-                total += (element.quantity * element.price);
+                total += (element.quantity * element.price.replace(',', ''));
                 addEvents(element);
             });
             
-            SUB_TOTAL.innerHTML = `$${total}.00`;
+            SUB_TOTAL.innerHTML = `NGN ${total}.00`;
             COUNT.innerHTML = `total cart (${cartItems.length})`;
-            TOTAL.innerHTML = `$${total > 0 ? total + dlvFee : total}.00`;
-            DELIVERY_FEE.innerHTML = `$${total > 0 ? dlvFee : 0}.00`;
+            TOTAL.innerHTML = `NGN ${total > 0 ? total + dlvFee : total}.00`;
+            DELIVERY_FEE.innerHTML = `NGN ${total > 0 ? dlvFee : 0}.00`;
         }
 
 
@@ -162,7 +164,8 @@
 
                     updateUi();
                 } else {
-                    productFlex.innerHTML = `<h1> No Cart Item<h1/>`;
+                    
+                    document.querySelector('#spinner').innerHTML = `<h1 class='p-4'> Cart Empty<h1/>`;
                 }
             }
 
